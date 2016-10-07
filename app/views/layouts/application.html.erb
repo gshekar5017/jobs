@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <div id="student-login", style="float: right; font-size:20px">
+<% if student_signed_in? %>
+  Signed in as <%= current_student.email %>. Not YOu?
+  <%= link_to "Sign Out", destroy_student_session_path, :method => :delete %>
+<% end %>
+</div>
 <%= yield %>
 
 </body>
